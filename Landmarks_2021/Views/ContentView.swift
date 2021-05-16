@@ -16,59 +16,59 @@ struct ContentView: View {
             CircleImage()
                 .offset(y: -130)
                 .padding(.bottom, -130)
-            
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 Text("環境エネルギー\nイノベーション棟")
                     .font(.title)
-                HStack{
+                HStack {
                     Text("Tokyo Institute of Technology")
                         .font(.subheadline)
                     Spacer()
                     Text("Tokyo, Japan")
                         .font(.subheadline)
                 }
-                
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 
                 Divider()
-
+                
                 Text("About")
                     .font(.title2)
-                VStack{
-                    HStack{
+                VStack {
+                    HStack {
                         Text("建物名称")
                             .font(.subheadline)
                         Spacer()
                         Text("環境エネルギーイノベーション棟")
                             .font(.subheadline)
                     }
-                    HStack{
+                    HStack {
                         Text("構造・規模")
                             .font(.subheadline)
                         Spacer()
                         Text("鉄構造 地上7階 地下2階")
                             .font(.subheadline)
                     }
-                    HStack{
+                    HStack {
                         Text("完成時期")
                             .font(.subheadline)
                         Spacer()
                         Text("平成24年2月")
                             .font(.subheadline)
                     }
-                    HStack{
+                    HStack {
                         Text("所在地")
                             .font(.subheadline)
                         Spacer()
                         Text("大岡山キャンパス北3号館")
                             .font(.subheadline)
                     }
-                    if let url = URL(string: "https://www.titech.ac.jp/research/stories/eei_building.html") {
-                        Link("東京工業大学の公式案内", destination: url)
+                    HStack {
+                        Spacer()
+                        if let url = URL(string: "https://www.titech.ac.jp/research/stories/eei_building.html") {
+                            Link("施設情報", destination: url)
+                        }
                     }
                 }
-                    
             }
             .padding()
             
