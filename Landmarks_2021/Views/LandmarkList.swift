@@ -12,20 +12,84 @@ struct LandmarkList: View {
         NavigationView {
             List {
                 NavigationLink(
-                    destination: ContentView(),
+                    destination: LandmarkDetail(landmark: Landmark(
+                        name: "Turtle Rock",
+                        category: "Rivers",
+                        city: "Twentynine Palms",
+                        state: "California",
+                        id: 1001,
+                        isFeatured: true,
+                        isFavorite: true,
+                        park: "Joshua Tree National Park",
+                        description: "description",
+                        imageName: "turtlerock",
+                        coordinates: Landmark.Coordinate(
+                            latitude: 34.011286,
+                            longitude: -116.166868)
+                        )
+                    ),
                     label: {
-                        LandmarkRow()
+                        LandmarkRow(landmark: Landmark(
+                            name: "Turtle Rock",
+                            category: "Rivers",
+                            city: "Twentynine Palms",
+                            state: "California",
+                            id: 1001,
+                            isFeatured: true,
+                            isFavorite: true,
+                            park: "Joshua Tree National Park",
+                            description: "description",
+                            imageName: "turtlerock",
+                            coordinates: Landmark.Coordinate(
+                                latitude: 34.011286,
+                                longitude: -116.166868)
+                            )
+                        )
                     }
                 )
-                LandmarkRow()
-                LandmarkRow()
-                LandmarkRow()
+                NavigationLink(
+                    destination: LandmarkDetail(landmark: Landmark(
+                        name: "Silver Salmon Creek",
+                        category: "Lakes",
+                        city: "Port Alsworth",
+                        state: "Alaska",
+                        id: 1002,
+                        isFeatured: false,
+                        isFavorite: false,
+                        park: "Lake Clark National Park and Preserve",
+                        description: "description ...",
+                        imageName: "silversalmoncreek",
+                        coordinates: Landmark.Coordinate(
+                            latitude: 59.980167,
+                            longitude: -152.665167)
+                        )
+                    ),
+                    label: {
+                        LandmarkRow(landmark: Landmark(
+                            name: "Silver Salmon Creek",
+                            category: "Lakes",
+                            city: "Port Alsworth",
+                            state: "Alaska",
+                            id: 1002,
+                            isFeatured: false,
+                            isFavorite: false,
+                            park: "Lake Clark National Park and Preserve",
+                            description: "description ...",
+                            imageName: "silversalmoncreek",
+                            coordinates: Landmark.Coordinate(
+                                latitude: 59.980167,
+                                longitude: -152.665167)
+                            )
+                        )
+                    }
+                )
             }
         .navigationTitle("Landmarks")
         .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }
+
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
