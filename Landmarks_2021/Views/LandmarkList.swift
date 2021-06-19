@@ -8,18 +8,47 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    var landmark: Landmark
+    
     var body: some View {
         NavigationView {
-            List {
+            Group {
                 NavigationLink(
-                    destination: ContentView(),
+                    destination: LandmarkDetail(landmark: Landmark(
+                        name: "Turtle Rock",
+                        category: "Rivers",
+                        city: "Twentynine Palms",
+                        state: "California",
+                        id: 1001,
+                        isFeatured: true,
+                        isFavorite: true,
+                        park: "Joshua Tree National Park",
+                        description: "description",
+                        imageName: "turtlerock",
+                        coordinates: Landmark.Coordinate(
+                            latitude: 34.011286,
+                            longitude: -116.166868)
+                        )
+                    ),
                     label: {
-                        LandmarkRow()
+                        LandmarkRow(landmark: Landmark(
+                            name: "Turtle Rock",
+                            category: "Rivers",
+                            city: "Twentynine Palms",
+                            state: "California",
+                            id: 1001,
+                            isFeatured: true,
+                            isFavorite: true,
+                            park: "Joshua Tree National Park",
+                            description: "description",
+                            imageName: "turtlerock",
+                            coordinates: Landmark.Coordinate(
+                                latitude: 34.011286,
+                                longitude: -116.166868)
+                            )
+                        )
                     }
                 )
-                LandmarkRow()
-                LandmarkRow()
-                LandmarkRow()
             }
         .navigationTitle("Landmarks")
         .navigationBarTitleDisplayMode(.automatic)
@@ -27,8 +56,24 @@ struct LandmarkList: View {
     }
 }
 
+
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList()
+        LandmarkList(landmark: Landmark(
+            name: "Turtle Rock",
+            category: "Rivers",
+            city: "Twentynine Palms",
+            state: "California",
+            id: 1001,
+            isFeatured: true,
+            isFavorite: true,
+            park: "Joshua Tree National Park",
+            description: "description",
+            imageName: "turtlerock",
+            coordinates: Landmark.Coordinate(
+                latitude: 34.011286,
+                longitude: -116.166868)
+            )
+        )
     }
 }

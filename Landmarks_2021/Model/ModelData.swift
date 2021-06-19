@@ -7,6 +7,8 @@
 
 import Foundation
 
+let landmarks = load()
+
 func load() -> [Landmark] {
     print("load")
     let file = Bundle.main.url(forResource: "landmarkData", withExtension: ".json")!

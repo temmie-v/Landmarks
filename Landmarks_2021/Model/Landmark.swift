@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Landmark: Decodable {
+struct Landmark: Decodable, Identifiable {
     let name: String
     let category: String
     let city: String
@@ -18,4 +18,10 @@ struct Landmark: Decodable {
     let park: String
     let description: String
     let imageName: String
+    let coordinates: Coordinate
+    
+    struct Coordinate: Decodable {
+        var latitude: Double
+        var longitude: Double
+    }
 }
