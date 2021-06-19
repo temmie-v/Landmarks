@@ -11,7 +11,7 @@ import SwiftUI
 struct Landmarks_2021App: App {
     var body: some Scene {
         WindowGroup {
-            LandmarkList(landmark: landmarks[0])
+            LandmarkList()
                 .onAppear {
                     let l = load()
                     print(l)
